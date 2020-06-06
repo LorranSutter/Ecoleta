@@ -1,41 +1,71 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Feather as Icon } from '@expo/vector-icons'
-import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native';
 
+// TODO implement input fields using react-native-picker-select
+
 const Home = () => {
+
+  const [province, setProvince] = useState('');
+  const [city, setCity] = useState('');
 
   const navigation = useNavigation();
 
   function handleNavigationToPoints() {
-    navigation.navigate('Points');
+    navigation.navigate('Points', {
+      province,
+      city
+    });
   }
 
   return (
-    <ImageBackground
-      style={styles.container}
-      source={require('../../assets/home-background.png')}
-      imageStyle={{ width: 274, height: 368 }}
-    >
-      <View style={styles.main}>
-        <Image source={require('../../assets/logo.png')} />
-        <Text style={styles.title}>Your waste collection marketpalce</Text>
-        <Text style={styles.description}>We help people find collection points efficiently</Text>
-      </View>
-
-      <View style={styles.footer}>
-        <RectButton style={styles.button} onPress={handleNavigationToPoints}>
-          <View style={styles.buttonIcon}>
-            <Icon name="arrow-right" color="#FFF" size={24} />
+    <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <ImageBackground
+        style={styles.container}
+        source={require('../../assets/home-background.png')}
+        imageStyle={{ width: 274, height: 368 }}
+      >
+        <View style={styles.main}>
+          <Image source={require('../../assets/logo.png')} />
+          <View>
+            <Text style={styles.title}>Your waste collection marketpalce</Text>
+            <Text style={styles.description}>We help people find collection points efficiently</Text>
           </View>
-          <Text style={styles.buttonText}>
-            Enter
-          </Text>
-        </RectButton>
-      </View>
+        </View>
 
-    </ImageBackground>
+        <View style={styles.footer}>
+          <TextInput
+            style={styles.input}
+            placeholder="Province"
+            value={province}
+            maxLength={2}
+            autoCapitalize="characters"
+            autoCorrect={false}
+            onChangeText={setProvince}
+          />
+
+          <TextInput
+            style={styles.input}
+            placeholder="City"
+            value={city}
+            autoCorrect={false}
+            onChangeText={setCity}
+          />
+
+          <RectButton style={styles.button} onPress={handleNavigationToPoints}>
+            <View style={styles.buttonIcon}>
+              <Icon name="arrow-right" color="#FFF" size={24} />
+            </View>
+            <Text style={styles.buttonText}>
+              Enter
+          </Text>
+          </RectButton>
+        </View>
+
+      </ImageBackground>
+    </KeyboardAvoidingView>
   );
 }
 

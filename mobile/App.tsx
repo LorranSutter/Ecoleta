@@ -7,6 +7,8 @@ import { Ubuntu_700Bold, useFonts } from '@expo-google-fonts/ubuntu';
 
 import Routes from './src/routes';
 
+// TODO Update Icon and Splash screen in app.json
+
 export default function App() {
 
   const [fontsLoaded] = useFonts({
