@@ -8,6 +8,7 @@ import axios from 'axios';
 import './styles.css';
 import api from '../../services/api';
 import logo from '../../assets/logo.svg';
+import Dropzone from '../../components/Dropzone';
 
 interface Item {
     id: number;
@@ -43,6 +44,7 @@ const CreatePoint = () => {
     const [selectedProvince, setSelectedProvince] = useState<string>('');
     const [selectedCity, setSelectedCity] = useState<string>('');
     const [selectedItems, setSelectedItems] = useState<number[]>([]);
+    const [selectedFile, setSelectedFile] = useState<File>();
 
 
     useEffect(() => {
@@ -131,20 +133,24 @@ const CreatePoint = () => {
         const [latitude, longitude] = selectedPosition ?? initialPosition;
         const items = selectedItems;
 
-        const data = {
-            name,
-            email,
-            whatsapp,
-            province,
-            city,
-            latitude,
-            longitude,
-            items
-        };
+        const data = new FormData();
+
+        data.append('name', name);
+        data.append('email', email);
+        data.append('whatsapp', whatsapp);
+        data.append('province', province);
+        data.append('city', city);
+        data.append('latitude', String(latitude));
+        data.append('longitude', String(longitude));
+        data.append('items', items.join(','));
+
+        if (selectedFile) {
+            data.append('image', selectedFile);
+        }
 
         api
             .post('points', data)
-            .then(res => {
+            .then(() => {
                 history.push('/');
             })
     }
@@ -161,6 +167,8 @@ const CreatePoint = () => {
 
             <form onSubmit={handleSubmit}>
                 <h1>Collection point registration</h1>
+
+                <Dropzone onFileUploaded={setSelectedFile} />
 
                 <fieldset>
                     <legend>
