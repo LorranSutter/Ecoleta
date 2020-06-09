@@ -36,13 +36,13 @@ cd Ecoleta
 
 # Go to each folder and install dependencies
 cd backend
-npm install
+yarn
 
 cd ../frontend
-npm install
+yarn
 
 cd ../mobile
-npm install
+yarn
 ```
 
 Now you will need two opened terminals to run the project. One for the backend and another one for the frontend or mobile.
@@ -58,7 +58,7 @@ Mobile will run on http://localhost:19002/
 cd backend
 
 # Run the project
-npm start
+yarn start
 
 ## In the another terminal ##
 
@@ -66,7 +66,7 @@ npm start
 cd frontend
 
 # Run the project
-npm start
+yarn start
 ```
 
 For the mobile web app keep backend running and do the following:
