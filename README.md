@@ -83,17 +83,17 @@ This will start expo CLI on your browser. A QR code will appear on your screen a
 
 ## :book: Resources and technologies :computer:
 
-- [Typescript](https://www.typescriptlang.org/)
-- [Node.js](https://nodejs.org/en/)
-- [Express.js](http://expressjs.com/)
-- [Multer](https://www.npmjs.com/package/multer)
-- [Reactjs](https://reactjs.org/)
-- [React Navigation](https://reactnavigation.org/)
-- [React Leaflet](https://react-leaflet.js.org/)
-- [React dropzone](https://react-dropzone.js.org/)
-- [React Native](https://reactnative.dev/)
-- [Expo](https://expo.io/)
-- [React Native Maps](https://github.com/react-native-community/react-native-maps)
-- [Knex](http://knexjs.org/)
-- [Sqlite](https://www.sqlite.org/index.html)
-- [Celebrate](https://github.com/arb/celebrate)
+- [Typescript](https://www.typescriptlang.org/) - superset of JS programming language static typed
+- [Node.js](https://nodejs.org/en/) - executes JS scripts in server side
+- [Express.js](http://expressjs.com/) - web application framework
+- [Multer](https://www.npmjs.com/package/multer) - middleware for uploading files
+- [ReactJS](https://reactjs.org/) - frontend library
+- [React Navigation](https://reactnavigation.org/) - routing and navigation for react apps
+- [React Leaflet](https://react-leaflet.js.org/) - map component based on Leaflet
+- [React dropzone](https://react-dropzone.js.org/) - create zone to drop files
+- [React Native](https://reactnative.dev/) - framework for mobile development
+- [Expo](https://expo.io/) - tool for helping mobile development with react native
+- [React Native Maps](https://github.com/react-native-community/react-native-maps) - map component for iOS and Android
+- [Knex](http://knexjs.org/) - query builder
+- [Sqlite](https://www.sqlite.org/index.html) - simple SQL database engine
+- [Celebrate](https://github.com/arb/celebrate) - middleware to validate data
