@@ -1,6 +1,6 @@
 # Ecoleta - Next Level Week
 
-Project provided by [Rocket Seat](https://rocketseat.com.br/week/inscricao/11.0) to learn backend, frontend and mobile development employing React JS, React Native and Express.
+Project provided by [Rocket Seat](https://rocketseat.com.br) to learn backend, frontend and mobile development employing React JS, React Native and Express.
 
 <div align="center">
 
